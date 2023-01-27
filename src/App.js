@@ -4,7 +4,8 @@ import Header from './component/Header';
 import PizzBlock from './component/PizzBlock';
 import Sort from './component/Sort';
 import './scss/app.scss';
-
+import items from './assets/pizza.json';
+console.log(items)
 function App() {
   return (
     <div className="App">
@@ -18,9 +19,15 @@ function App() {
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
-              <PizzBlock title='Mexico' price={600} />
-              <PizzBlock title='Paperone' price={800} />
-              <PizzBlock title='Chess' price={750} />
+              {
+                items.map(obj => (
+                  <PizzBlock
+                    {...obj}
+                  />
+
+                )
+                )
+              }
 
             </div>
           </div>
