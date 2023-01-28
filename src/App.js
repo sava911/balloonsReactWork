@@ -22,6 +22,7 @@ function App() {
               {
                 items.map(obj => (
                   <PizzBlock
+                    key={obj.id}
                     {...obj}
                   />
 

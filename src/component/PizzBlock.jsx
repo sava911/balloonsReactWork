@@ -18,7 +18,8 @@ function PizzBlock({title, price, imageUrl, sizes, types}) {
           <ul>
             {
               types.map((i) => (
-                <li onClick={() => setActiveType(i)}
+                <li key={i}
+                  onClick={() => setActiveType(i)}
                   className={
                     activeType === i ? 'active' : ''
                   }>
@@ -29,7 +30,9 @@ function PizzBlock({title, price, imageUrl, sizes, types}) {
           <ul>
             {
               sizes.map((item, i) => (
-                <li onClick={() => setActiveSize(i)}
+                <li
+                  key={i}
+                  onClick={() => setActiveSize(i)}
                   className={
                     activeSize === i ? 'active' : ''
                   }>{item} см.</li>
